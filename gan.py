@@ -13,7 +13,7 @@ from torch.autograd import Variable
 mnist = input_data.read_data_sets('./MNIST_data', one_hot=True)
 
 batch_size = 64
-n_epochs = 10
+n_epochs = 100
 
 x_dim = mnist.train.images.shape[1]
 
@@ -92,4 +92,4 @@ for step in range(n_steps):
 	g_loss_total.backward()
 	g_optimizer.step()
 
-	print('Step {}, D loss: {}, G loss: {}'.format(step + 1, d_loss_total.data.numpy()[0], g_loss_total.data.numpy()[0]))
+	print('Step {} D loss: {}, G loss: {}'.format(step + 1, d_loss_total.data.numpy()[0], g_loss_total.data.numpy()[0]))
