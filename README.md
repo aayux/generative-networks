@@ -1,3 +1,5 @@
 # Generative Networks in PyTorch
 
-This project is a work in progress.
+A work in progress.
+
+[wiseodd/generative-models](https://github.com/wiseodd/generative-models) was used as a starting point for this project.
