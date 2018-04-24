@@ -93,3 +93,5 @@ for step in range(n_steps):
 	g_optimizer.step()
 
 	print('Step {} D loss: {}, G loss: {}'.format(step + 1, d_loss_total.data.numpy()[0], g_loss_total.data.numpy()[0]))
+	
+	# TO DO: Generate samples from trained generator
