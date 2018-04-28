@@ -96,6 +96,7 @@ for iteration in range(n_iterations):
 
 print ("Finished training. Saving model ...")
 save_dir = utils.save(G, D)
-gen_ckpt = os.path.join(save_dir, 'vanilla_generator.ckpt')
+print ("Saved at location: {}".format(save_dir))
 
+gen_ckpt = os.path.join(save_dir, 'vanilla_generator.ckpt')
 utils.render(G, gen_ckpt)
