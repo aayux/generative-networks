@@ -11,10 +11,12 @@ import torch.optim as optim
 import torch.nn.functional as F
 from torch.autograd import Variable
 
+import utils.general_utils as utils
+
 mnist = input_data.read_data_sets('./MNIST', one_hot=True)
 
 batch_size = 64
-n_iterations = 1000
+n_iterations = 10000
 
 x_dim = mnist.train.images.shape[1]
 
@@ -90,10 +92,10 @@ for iteration in range(n_iterations):
     g_loss_total.backward()
     g_optimizer.step()
 
-    print('Step {} D loss: {}, G loss: {}'.format(iteration + 1, d_loss_total.data.numpy()[0], g_loss_total.data.numpy()[0]))
+    print('Step {} D loss: {}, G loss: {}'.format(iteration + 1, d_loss_total.data.numpy(), g_loss_total.data.numpy()))
 
-    print ("Finished training. Saving model ...")
-    save_dir = utils.save(G, D)
-    gen_ckpt = os.path.join(save_dir, 'vanilla_generator.ckpt')
+print ("Finished training. Saving model ...")
+save_dir = utils.save(G, D)
+gen_ckpt = os.path.join(save_dir, 'vanilla_generator.ckpt')
 
-    utils.render(G, gen_ckpt)
+utils.render(G, gen_ckpt)
