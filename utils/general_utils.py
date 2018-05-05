@@ -9,8 +9,6 @@ import torch
 import matplotlib.pyplot as plt
 from torch.autograd import Variable
 
-matplotlib.use("Agg")
-
 def save(G, D, model):
     stamp = model + "_" + str(int(time.time()))
     save_dir = os.path.join(os.path.curdir, "runs", stamp)
