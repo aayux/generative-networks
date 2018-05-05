@@ -1,6 +1,9 @@
 from __future__ import print_function
 from builtins import range
 
+import sys
+sys.path.append('../')
+
 import os
 import torch
 import argparse
@@ -21,7 +24,7 @@ parser.add_argument('--idim', type=int, default=32, help='size of the image, def
 parser.add_argument('--zdim', type=int, default=100, help='size of the latent z vector')
 parser.add_argument('--hdim', type=int, default=128, help='dimension of hidden layers')
 parser.add_argument('--nepochs', type=int, default=10, help='number of training iterations')
-parser.add_argument('--lr', type=float, default=0.001, help='learning rate, default=0.001')
+parser.add_argument('--lr', type=float, default=0.0002, help='learning rate, default=0.0002')
 
 opt = parser.parse_args()
 
@@ -30,7 +33,7 @@ n_iterations = int(opt.nepochs)
 lr = int(opt.lr)
 
 dataset = dataset.MNIST(root='./data/',transform=
-                     transforms.Compose([transforms.Resize(32),
+                     transforms.Compose([transforms.Resize(int(opt.idim)),
                                          transforms.ToTensor()]),
                      download = True)
 
@@ -130,7 +133,7 @@ for iteration in range(n_iterations):
         G.zero_grad()
 
         # Generator forward-loss-backward-update
-        z = Variable(torch.randn(batch_size, z_dim))
+        z = Variable(torch.randn(batch_size, z_dim, 1, 1))
         generated_samples = G(z)
         discriminate_fake = D(generated_samples)
 
