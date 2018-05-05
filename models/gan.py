@@ -87,7 +87,7 @@ for iteration in range(n_iterations):
         z = Variable(torch.randn(batch_size, z_dim))
 
         # Dicriminator steps: forward-loss-backward-update
-        generated_samples = G(z)
+        generated_samples = G(z.detach())
         discriminate_real = D(x)
         discriminate_fake = D(generated_samples)
 
