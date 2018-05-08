@@ -1,6 +1,8 @@
-# Generative Adversarial Networks in PyTorch
+# Generative Adversarial Networks with Torch (Python and Lua)
 
-A work in progress. Also working on a Lua implementation.
+A work in progress.
+
+Also working on an introductory example to Torch in Lua [here](https://github.com/dust0x/generative-networks/blob/master/lua/basics.lua).
 
 ### Models
 Model | Python | Lua
