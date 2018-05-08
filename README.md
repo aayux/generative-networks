@@ -5,8 +5,8 @@ A work in progress. Also working on a Lua implementation.
 ### Models
 Model | Python | Lua
 --- | --- | ---
-(Vanilla) GAN <sup>[2]</sup> | :heavy_check_mark: | :x:
-DCGAN <sup>[3]</sup> | :heavy_check_mark: | :x:
+(Vanilla) GAN <sup>[2]</sup> | :heavy_check_mark: | :exclamation:
+DCGAN <sup>[3]</sup> | :exclamation: | :x:
 
 ### References
 [1]  LeCun et al., [The MNIST Dataset Of Handwritten Digits (Images)](http://yann.lecun.com/exdb/mnist/), 1999.
